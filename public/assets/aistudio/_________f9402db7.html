@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مفاجأة 💖</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap">
+<style>
+:root{--c1:#ffe3ec;--c2:#ffc2d6;--c3:#e3b5ff;--ink:#5a1235;--card:rgba(255,255,255,.6);--accent:#e0306b;--glow:#ff8fb8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--c1:#1a0b2e;--c2:#4a1250;--c3:#a3145a;--ink:#fff0f6;--card:rgba(255,255,255,.12);--accent:#ff5c9a;--glow:#ff3d8b;color-scheme:dark}}
+:root[data-theme="dark"]{--c1:#1a0b2e;--c2:#4a1250;--c3:#a3145a;--ink:#fff0f6;--card:rgba(255,255,255,.12);--accent:#ff5c9a;--glow:#ff3d8b;color-scheme:dark}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;margin:0;overflow:hidden}
+body{font-family:"Cairo","Segoe UI",Tahoma,sans-serif;color:var(--ink);background:linear-gradient(135deg,var(--c1),var(--c2),var(--c3),var(--c1));background-size:300% 300%;animation:bg 14s ease infinite;touch-action:pan-y;user-select:none}
+@keyframes bg{50%{background-position:100% 100%}}
+.blob{position:fixed;width:60vmax;height:60vmax;border-radius:50%;filter:blur(70px);opacity:.45;background:var(--glow);animation:drift 16s ease-in-out infinite alternate;pointer-events:none}
+.blob.b2{background:var(--c3);right:-20vmax;bottom:-20vmax;animation-duration:22s}.blob.b1{left:-25vmax;top:-25vmax}
+@keyframes drift{to{transform:translate(12vmax,8vmax) scale(1.2)}}
+.fl{position:fixed;bottom:-60px;pointer-events:none;animation:rise linear infinite;opacity:.7}
+@keyframes rise{to{transform:translateY(-115vh) rotate(40deg);opacity:0}}
+#stage{position:fixed;inset:0;padding-top:env(safe-area-inset-top,0px);padding-bottom:calc(262px + env(safe-area-inset-bottom,0px))}
+.slide{position:absolute;inset:0;padding:18px 20px;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateX(70px) scale(.92) rotate(2deg);transition:opacity .6s,transform .7s cubic-bezier(.2,.9,.3,1.2)}
+.slide.active{opacity:1;pointer-events:auto;transform:none}.slide.past{transform:translateX(-70px) scale(.92) rotate(-2deg)}
+.card{width:min(540px,100%);text-align:center;padding:22px 22px 20px;border-radius:36px;background:var(--card);border:1px solid rgba(255,255,255,.4);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 20px 60px rgba(224,48,107,.28)}
+.em{font-size:60px;line-height:1;display:inline-block;animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px) rotate(6deg) scale(1.08)}}
+.from{font-size:14px;opacity:.7;margin-top:4px}
+h1{margin:6px 0 4px;font-weight:800;font-size:clamp(26px,7.5vw,44px);line-height:1.4}
+.big h1{font-size:clamp(40px,12vw,70px)}
+.w{display:inline-block;opacity:0}
+.active .w{animation:pop .7s cubic-bezier(.2,1.4,.4,1) both;animation-delay:calc(var(--i)*.12s + .25s)}
+@keyframes pop{from{opacity:0;transform:translateY(26px) scale(.6) rotate(-6deg)}to{opacity:1;transform:none}}
+.sub{margin:2px 0 0;font-size:15px;opacity:.8}
+.btn{margin-top:14px;font:600 17px/1 "Cairo",sans-serif;color:#fff;border:0;border-radius:99px;padding:13px 24px;background:linear-gradient(135deg,#ff6fa5,var(--accent));box-shadow:0 8px 24px rgba(224,48,107,.45);cursor:pointer;transition:transform .15s}
+.btn:active{transform:scale(.9)}
+.msg{min-height:28px;margin-top:10px;font-size:18px;font-weight:600}.msg.show{animation:pop .5s both}
+#duo{position:fixed;left:0;right:0;bottom:calc(74px + env(safe-area-inset-bottom,0px));height:150px;pointer-events:none}
+.ch{position:absolute;bottom:0;width:100px;text-align:center;pointer-events:auto;cursor:pointer;transition:transform .9s cubic-bezier(.3,1.4,.5,1);--n:min(24vw,110px)}
+#him{right:14%}#her{left:14%}
+#him.near{transform:translateX(calc(-1*var(--n)))}#her.near{transform:translateX(var(--n))}
+.face{font-size:76px;line-height:1;animation:bob 2.4s ease-in-out infinite}#her .face{animation-delay:-1.2s}
+@keyframes bob{50%{transform:translateY(-8px) scale(1.04)}}
+.jm.jump{animation:jump .6s}.jm.shake{animation:shk .6s}
+@keyframes jump{30%{transform:translateY(-44px) rotate(-8deg)}60%{transform:translateY(0) scale(1.1,.9)}}
+@keyframes shk{20%,60%{transform:translateX(-10px) rotate(-8deg)}40%,80%{transform:translateX(10px) rotate(8deg)}}
+.nm{font-size:14px;font-weight:600;margin-top:2px;opacity:.85;min-height:20px}
+.say{position:absolute;bottom:108px;left:50%;margin-left:-85px;width:170px;padding:7px 10px;border-radius:18px;background:#fff;color:#5a1235;font-size:14px;font-weight:600;line-height:1.4;opacity:0;pointer-events:none;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.say.on{animation:bub 2.8s both}
+@keyframes bub{0%{opacity:0;transform:scale(.4) translateY(14px)}10%{opacity:1;transform:none}85%{opacity:1}100%{opacity:0}}
+#nav{position:fixed;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 20px calc(12px + env(safe-area-inset-bottom,0px))}
+.ar{width:52px;height:52px;border-radius:50%;border:0;font-size:20px;color:var(--ink);background:var(--card);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);cursor:pointer}.ar:active{transform:scale(.88)}
+#dots{display:flex;gap:8px}#dots i{width:10px;height:10px;border-radius:50%;background:var(--ink);opacity:.25;transition:.4s}#dots i.on{opacity:1;background:var(--accent);width:28px;border-radius:99px}
+.fx,.fx2,.pp{position:fixed;pointer-events:none;z-index:100}
+.fx{font-size:26px;animation:fly 1.3s ease-out forwards}@keyframes fly{to{transform:translate(var(--dx),var(--dy)) rotate(var(--r)) scale(1.3);opacity:0}}
+.fx2{left:0;top:0;font-size:34px;margin:-17px 0 0 -17px;z-index:90}
+.pp{font-size:72px;margin:-40px 0 0 -40px;animation:ppa 1.8s ease-out forwards}@keyframes ppa{0%{transform:scale(0) rotate(0)}30%{transform:scale(1.4) rotate(20deg)}100%{transform:scale(1) rotate(360deg) translateY(-60px);opacity:0}}
+.ov{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;padding-top:calc(24px + env(safe-area-inset-top,0px));background:linear-gradient(160deg,var(--c1),var(--c2),var(--c3));transition:opacity .8s,transform .8s;overflow:hidden}
+.ov.gone{opacity:0;transform:scale(1.25);pointer-events:none}
+.ov h2{margin:0;font-size:28px;font-weight:800;text-align:center}.ov p{margin:0;opacity:.8;text-align:center}
+.lv{font-size:13px;font-weight:600;padding:4px 14px;border-radius:99px;background:var(--card)}
+#pd{display:flex;gap:14px;font-size:34px;height:44px}.shake{animation:shk .5s}
+#pad{display:grid;grid-template-columns:repeat(3,70px);gap:12px;direction:ltr}
+#pad button{height:70px;border-radius:50%;border:0;font:600 26px "Cairo",sans-serif;color:var(--ink);background:var(--card);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}#pad button:active{transform:scale(.88);background:var(--accent);color:#fff}
+#err,#err2{min-height:24px;font-weight:600;color:var(--accent);text-align:center}
+#slots{display:flex;gap:14px}.slot{width:76px;height:96px;border-radius:22px;background:var(--card);display:flex;align-items:center;justify-content:center;font-size:60px;font-weight:800;color:var(--accent)}
+#arena{position:relative;width:100%;flex:1;min-height:260px}
+.bub{position:absolute;width:62px;height:62px;border-radius:50%;border:2px solid rgba(255,255,255,.6);font:800 28px "Cairo",sans-serif;color:var(--ink);background:var(--card);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);animation:wander var(--d) ease-in-out infinite alternate;cursor:pointer}
+@keyframes wander{to{transform:translate(var(--wx),var(--wy)) rotate(20deg)}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-iteration-count:1!important;transition-duration:.01s!important}}
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div>
+<div id="stage"></div>
+<div id="duo">
+ <div class="ch" id="him"><div class="say"></div><div class="jm"><div class="face">🧑</div></div><div class="nm">أنا</div></div>
+ <div class="ch" id="her"><div class="say"></div><div class="jm"><div class="face">👩</div></div><div class="nm" id="hn"></div></div>
+</div>
+<div id="nav"><button class="ar" id="nx" aria-label="التالي">◀</button><div id="dots"></div><button class="ar" id="pv" aria-label="السابق">▶</button></div>
+
+<div class="ov" id="lock">
+ <div style="font-size:70px;animation:float 3s ease-in-out infinite">🔐</div>
+ <span class="lv">المستوى ١ من ٢</span>
+ <h2>في مفاجأة مستنياكي 🎁</h2>
+ <p>اكتبي الباسوورد وكمّلي التحدي</p>
+ <div id="pd"></div><div id="err"></div><div id="pad"></div>
+</div>
+<div class="ov gone" id="lvl2">
+ <span class="lv">المستوى ٢ من ٢</span>
+ <h2>اصطادي الحروف بالترتيب 🎯</h2>
+ <p>الحروف دي هتقولك اسم مين المفاجأة 😏</p>
+ <div id="slots"></div><div id="err2"></div><div id="arena"></div>
+</div>
+
+<script>
+var PASS="6628",KEY="amal-unlocked2",EM=["💖","💕","💗","✨","🌸","💘","🦋","🌹","😍","💞"];
+var S=[
+{e:"💖",t:"بحبك يا أمل",big:1,s:"اسحبي بصباعك يمين وشمال 👆 واضغطي علينا 😄",r1:"وأنا كمان بحبك 🥰",r2:"أحلى حاجة سمعتها 😍",act:{k:"fly",e:"💖"},b:["ابعتلها قلب 🎈",["💘 وصلها","قلبي بيرقص 💃"]]},
+{e:"🌹",t:"إنتي أحلى حاجة حصلت في حياتي",r1:"أنت اللي أحلى 😳",r2:"خدي الوردة دي 🌹",act:{k:"fly",e:"🌹"},b:["ليه؟ 🥺",["لأنك إنتي 💕","ولأن قلبي عرفك 💘"]]},
+{e:"😍",t:"ضحكتك بتنوّر أصعب أيامي",r1:"هههههه بطّل 😂",r2:"أنا بتكلم جد 😁",act:{k:"shake",e:"😂"},b:["اضحكي بقى 😁",["😂😂😂","الدنيا نورت ✨"]]},
+{e:"🏡",t:"جنبك أي مكان بيبقى بيتي",r1:"وأنا بيتي حضنك 🤗",r2:"تعالي أبنيلك بيت 🏠",act:{k:"near",e:"🏡"},b:["قرّبنا 🤗",["في حضنك 🤗","في كل مكان فيه إنتي 💞"]]},
+{e:"🔥",t:"كل يوم بحبك أكتر من اللي قبله",r1:"أنا أكتر 😤💕",r2:"لأ أنا 😏",act:{k:"fly2",e:"💞"},b:["مين بيحب أكتر؟ ⚔️",null]},
+{e:"⏳",t:"لو رجع بيا الزمن هختارك تاني ألف مرة",r1:"وأنا هلاقيك في أي زمن ⏳",r2:"ومليون كمان 🚀",act:{k:"pop",e:"⏳"},b:["رجّعي الزمن ⏪",["هختارك ألف مرة ♾️","ومش هزهق 😘"]]},
+{e:"👑",t:"وهفضل أحبك العمر كله يا أمل",s:"إنتي ملكة قلبي 👑❤️",r1:"وأنا معاك للأبد 💍",r2:"يلا نعيش سوا 🥹",act:{k:"near",e:"💍",stay:1},b:["مفاجأة أخيرة 🎁",["بحبك 💖💖💖","يا أغلى حاجة 💎"]]}
+];
+var $=function(i){return document.getElementById(i)},st=$("stage"),dots=$("dots"),him=$("him"),her=$("her"),cur=0,TM=[],cnt=[0,0],last={};
+function xy(el){var r=el.querySelector(".face").getBoundingClientRect();return{x:r.left+r.width/2,y:r.top+r.height/3}}
+function mid(){var a=xy(him),b=xy(her);return{x:(a.x+b.x)/2,y:a.y-20}}
+function burst(x,y,n){for(var k=0;k<n;k++){var s=document.createElement("span");s.className="fx";s.textContent=EM[Math.floor(Math.random()*EM.length)];var a=Math.random()*6.28,d=60+Math.random()*160;s.style.left=x+"px";s.style.top=y+"px";s.style.setProperty("--dx",Math.cos(a)*d+"px");s.style.setProperty("--dy",Math.sin(a)*d-60+"px");s.style.setProperty("--r",(Math.random()*120-60)+"deg");document.body.appendChild(s);setTimeout(function(el){el.remove()},1400,s)}}
+function fly(e,a,b,cb){var s=document.createElement("span");s.className="fx2";s.textContent=e;document.body.appendChild(s);
+ var an=s.animate([{transform:"translate("+a.x+"px,"+a.y+"px) scale(.6)"},{transform:"translate("+(a.x+b.x)/2+"px,"+(Math.min(a.y,b.y)-90)+"px) scale(1.6)"},{transform:"translate("+b.x+"px,"+b.y+"px) scale(1)"}],{duration:1100,easing:"ease-in-out"});
+ an.onfinish=function(){s.remove();if(cb)cb()}}
+function pop(e){var m=mid(),s=document.createElement("span");s.className="pp";s.textContent=e;s.style.left=m.x+"px";s.style.top=m.y+"px";document.body.appendChild(s);setTimeout(function(){s.remove()},1900)}
+function anim(c,k){var j=c.querySelector(".jm");j.classList.remove("jump","shake");void j.offsetWidth;j.classList.add(k)}
+function say(c,t){var b=c.querySelector(".say");b.textContent=t;b.classList.remove("on");void b.offsetWidth;b.classList.add("on")}
+function near(on){him.classList.toggle("near",on);her.classList.toggle("near",on)}
+function act(a){
+ if(a.k==="fly"){fly(a.e,xy(him),xy(her),function(){var p=xy(her);burst(p.x,p.y,10);anim(her,"jump")})}
+ else if(a.k==="fly2"){fly(a.e,xy(him),xy(her),function(){anim(her,"jump")});setTimeout(function(){fly(a.e,xy(her),xy(him),function(){anim(him,"jump")})},500)}
+ else if(a.k==="shake"){anim(him,"shake");anim(her,"shake");pop(a.e)}
+ else if(a.k==="near"){near(true);pop(a.e);if(!a.stay)TM.push(setTimeout(function(){near(false)},3500));else{var m=mid();burst(m.x,m.y,36);her.querySelector(".face").textContent="👸"}}
+ else{pop(a.e);anim(him,"jump");anim(her,"jump")}
+}
+function go(i){
+ if(i<0||i>=S.length)return;
+ TM.forEach(clearTimeout);TM=[];cur=i;near(false);her.querySelector(".face").textContent="👩";
+ var sl=st.children;
+ for(var k=0;k<sl.length;k++){sl[k].className=sl[k].className.replace(/ ?(active|past)/g,"");if(k===i)sl[k].classList.add("active");else if(k<i)sl[k].classList.add("past");dots.children[k].className=k===i?"on":""}
+ var d=S[i];
+ TM.push(setTimeout(function(){act(d.act)},900));
+ TM.push(setTimeout(function(){say(her,d.r1);anim(her,"jump")},2000));
+ TM.push(setTimeout(function(){say(him,d.r2);anim(him,"jump")},4300));
+}
+function build(){
+ S.forEach(function(d){
+  var sl=document.createElement("section");sl.className="slide"+(d.big?" big":"");
+  var w=d.t.split(" ").map(function(x,k){return '<span class="w" style="--i:'+k+'">'+x+'</span>'}).join(" ");
+  sl.innerHTML='<div class="card"><div class="em">'+d.e+'</div><div class="from">🧑 أنا بقولك</div><h1>'+w+'</h1>'+(d.s?'<p class="sub">'+d.s+'</p>':'')+'<button class="btn">'+d.b[0]+'</button><div class="msg"></div></div>';
+  var btn=sl.querySelector(".btn"),msg=sl.querySelector(".msg"),n=0;
+  btn.onclick=function(){
+   var m;
+   if(d.b[1]){m=d.b[1][n%d.b[1].length]}else{cnt[0]++;cnt[1]+=Math.random()<.6?2:1;m="🧑 "+cnt[0]+"  ⚔️  "+cnt[1]+" 👩"}
+   n++;msg.textContent=m;msg.classList.remove("show");void msg.offsetWidth;msg.classList.add("show");
+   act(d.act);if(!d.b[1])say(cnt[1]>cnt[0]?her:him,cnt[1]>cnt[0]?"أنا كسبت 😝":"لسه بحبك أكتر 😎");
+  };
+  st.appendChild(sl);dots.appendChild(document.createElement("i"));
+ });
+}
+/* touch: swipe + tap */
+var sx=0,sy=0;
+st.addEventListener("pointerdown",function(e){sx=e.clientX;sy=e.clientY});
+st.addEventListener("pointerup",function(e){
+ var dx=e.clientX-sx,dy=e.clientY-sy;
+ if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)){go(dx<0?cur+1:cur-1)}
+ else if(Math.abs(dx)<10&&Math.abs(dy)<10&&!e.target.closest("button")){
+  var p={x:e.clientX,y:e.clientY};burst(p.x,p.y,6);anim(him,"jump");anim(her,"jump");
+  fly("💗",xy(him),p);fly("💗",xy(her),p);
+ }
+});
+var HL=["😘","بحبك 💖","يا قلبي 🥰","هاخدك في حضني 🤗"],SL=["😳","هتكسفني 🙈","وأنا كمان 💕","يا سلام 😍"];
+[him,her].forEach(function(c){c.addEventListener("click",function(e){
+ e.stopPropagation();var isH=c===him,L=isH?HL:SL;
+ anim(c,"jump");say(c,L[Math.floor(Math.random()*L.length)]);var p=xy(c);burst(p.x,p.y,8);
+ last[c.id]=Date.now();
+ if(Date.now()-(last[isH?"her":"him"]||0)<1500){near(true);pop("💋");var m=mid();burst(m.x,m.y,24);last={};TM.push(setTimeout(function(){near(false)},3000))}
+})});
+$("nx").onclick=function(){go(cur+1)};$("pv").onclick=function(){go(cur-1)};
+document.addEventListener("keydown",function(e){
+ if(!$("lock").classList.contains("gone")){if(/^[0-9]$/.test(e.key))press(e.key);else if(e.key==="Backspace")press("x");return}
+ if(e.key==="ArrowLeft")go(cur+1);if(e.key==="ArrowRight")go(cur-1)});
+for(var k=0;k<16;k++){var f=document.createElement("span");f.className="fl";f.textContent=EM[k%EM.length];f.style.left=Math.random()*100+"vw";f.style.fontSize=(16+Math.random()*26)+"px";f.style.animationDuration=(9+Math.random()*10)+"s";f.style.animationDelay=(-Math.random()*14)+"s";document.body.appendChild(f)}
+function start(){
+ $("hn").textContent="أمل";document.title="لأمل 💖";
+ build();$("lock").classList.add("gone");$("lvl2").classList.add("gone");
+ try{localStorage.setItem(KEY,"1")}catch(e){}
+ setTimeout(function(){go(0);burst(innerWidth/2,innerHeight/2,30)},300);
+}
+/* level 1 */
+var buf="";
+function draw(){var h="";for(var k=0;k<4;k++)h+=k<buf.length?"💗":"🤍";$("pd").innerHTML=h}
+function press(k){
+ if(k==="x"){buf=buf.slice(0,-1);$("err").textContent="";draw();return}
+ if(buf.length>=4)return;buf+=k;draw();
+ if(buf.length===4){
+  if(buf===PASS){$("err").textContent="صح! 🔓 كمّلي...";setTimeout(function(){$("lock").classList.add("gone");$("lvl2").classList.remove("gone");lvl2()},700)}
+  else{$("err").textContent="غلط 🙈 فكّري تاني";$("pd").classList.add("shake");setTimeout(function(){$("pd").classList.remove("shake");buf="";draw()},520)}
+ }
+}
+["1","2","3","4","5","6","7","8","9","","0","x"].forEach(function(k){var b=document.createElement("button");b.textContent=k==="x"?"⌫":k;if(!k)b.style.visibility="hidden";b.onclick=function(){if(k)press(k)};$("pad").appendChild(b)});
+draw();
+/* level 2 */
+function lvl2(){
+ var T=["أ","م","ل"],pos=0,L=T.concat(["ب","س","ك","ر","ن","ه","ع","د","ي"]).sort(function(){return Math.random()-.5});
+ var sl=$("slots");sl.innerHTML="";for(var k=0;k<3;k++){var s=document.createElement("div");s.className="slot";s.textContent="؟";sl.appendChild(s)}
+ L.forEach(function(ch){
+  var b=document.createElement("button");b.className="bub";b.textContent=ch;
+  b.style.left=(6+Math.random()*68)+"%";b.style.top=(4+Math.random()*70)+"%";
+  b.style.setProperty("--wx",(Math.random()*160-80)+"px");b.style.setProperty("--wy",(Math.random()*140-70)+"px");b.style.setProperty("--d",(2.5+Math.random()*3)+"s");
+  b.onclick=function(e){
+   if(ch===T[pos]){sl.children[pos].textContent=ch;sl.children[pos].style.transform="scale(1.15)";pos++;b.remove();$("err2").textContent="برافو 👏";burst(e.clientX,e.clientY,10);
+    if(pos===3){$("err2").textContent="عرفتي مين؟ 💖💖💖";burst(innerWidth/2,innerHeight/3,40);setTimeout(start,2400)}}
+   else{$("err2").textContent="مش ده 🙈 بالترتيب!";sl.classList.remove("shake");void sl.offsetWidth;sl.classList.add("shake")}
+  };
+  $("arena").appendChild(b);
+ });
+}
+var ok=false;try{ok=localStorage.getItem(KEY)==="1"}catch(e){}
+if(ok)start();
+</script>
+</body>
+</html>

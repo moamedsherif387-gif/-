@@ -1,0 +1,6 @@
+{
+  "name": "مفاجأة لأمل 💖",
+  "description": "تطبيق مفاجأة رومانسي تفاعلي مع قفل بكلمة سر وبطاقات حب متحركة",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
